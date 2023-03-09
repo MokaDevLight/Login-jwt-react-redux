@@ -1,0 +1,483 @@
+@import "./numbers";
+@import "./colors";
+
+@mixin input-style {
+  width: $_100-percent;
+  height: $_100-percent;
+  background-color: $color-white-smoke;
+  padding-right: $header-title-padding;
+  outline: none;
+  font-family: IRANSans;
+  direction: rtl;
+}
+@mixin input-p-style {
+  font-size: $font-17-px;
+  text-align: right;
+  color: $color-navy;
+  margin-right: 0;
+  margin-bottom: 0.35rem;
+}
+@mixin button-filter {
+  background-color: $color-logout-button;
+  border: none;
+  border-radius: 5px;
+  height: $main-header-btn-height;
+  width: 8rem;
+  color: $color-white;
+  font-weight: bold;
+  font-family: IRANSans;
+  font-size: $font-20-px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.disabled {
+    background-color: $color-silver;
+  }
+}
+@mixin button-delete {
+  background-color: $color-white;
+  border: 1px solid $color-red;
+  border-radius: 5px;
+  height: $main-header-btn-height;
+  width: 8rem;
+  color: $color-red;
+  font-weight: bold;
+  font-family: IRANSans;
+  font-size: $font-20-px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.disabled {
+    background-color: $color-silver;
+  }
+}
+@mixin button-clean {
+  background-color: $color-background-detaile;
+  border: none;
+  border-radius: 5px;
+  height: $main-header-btn-height;
+  width: 6rem;
+  margin-right: 1rem;
+  color: $color-white;
+  font-weight: bold;
+  font-family: IRANSans;
+  font-size: $font-20-px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.disabled {
+    background-color: $color-silver;
+  }
+}
+@mixin btn-loading {
+  border: 2px solid $color-white-smoke;
+  border-top: 2px solid $color-blue-button;
+  border-radius: $_50-percent;
+  width: 15px;
+  height: 15px;
+  animation: spin 2s linear infinite;
+  outline: none;
+  color: $color-white;
+  align-self: center;
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@mixin grid-loading {
+  border: 2px solid $color-white-smoke;
+  border-top: 2px solid $color-medium-blue;
+  border-radius: $_50-percent;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  outline: none;
+  color: $color-white;
+  align-self: center;
+  margin: auto;
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+@mixin whole-page-loading {
+  border: 2px solid $color-white-smoke;
+  border-top: 2px solid $color-medium-blue;
+  border-radius: $_50-percent;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  outline: none;
+  color: $color-white;
+  align-self: center;
+  margin: auto;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@mixin button-style {
+  font-size: 0.9rem;
+  font-family: "IRANSans";
+  padding: 0.5rem;
+  margin-top: 0.8rem;
+  color: $color-white;
+  background-color: $color-Pale-blue;
+  border: unset;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+@mixin button-style-green {
+  background: $color-light-grayish-green;
+  border-radius: 18px;
+  width: $payment-grid-btn-width;
+  height: $payment-grid-btn-height;
+  border: unset;
+  color: $color-white;
+  font-weight: bold;
+  font-family: IRANSans;
+  font-size: $font-16-px;
+  margin-left: $payment-history-item-padding;
+  cursor: pointer;
+}
+@mixin button-style-red {
+  background: $color-red;
+  border-radius: 18px;
+  width: $payment-grid-btn-width;
+  height: $payment-grid-btn-height;
+  border: unset;
+  color: $color-white;
+  font-weight: bold;
+  font-family: IRANSans;
+  font-size: $font-16-px;
+  margin-left: $payment-history-item-padding;
+  cursor: pointer;
+}
+@mixin email-verify-btn {
+  width: max-content;
+  height: 38px;
+  align-self: flex-end;
+  //background-color: $color-navy;
+  border-right: unset;
+  border-left: solid 0.5px #acacac;
+  border-top: solid 0.5px #acacac;
+  border-bottom: solid 0.5px #acacac;
+  border-top-left-radius: 2.5px;
+  border-bottom-left-radius: 2.5px;
+  color: black;
+  font-family: IRANSans;
+  font-weight: bold;
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  opacity: 0.7;
+
+  button[disabled] {
+    background-color: $color-cyan;
+  }
+}
+@mixin email-change-btn {
+  width: 7rem;
+  height: 3rem;
+  align-self: flex-end;
+  margin-top: $one-rem;
+  background-color: $color-red-button;
+  border: unset;
+  border-radius: 1.43rem;
+  color: $color-white;
+  font-family: IRANSans;
+  font-weight: bold;
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: $one-rem;
+  button[disabled] {
+    background-color: $color-cyan;
+  }
+}
+@mixin textarea-style {
+  background-color: $color-white;
+  width: 100%;
+  font-family: IRANSans;
+  padding: $one-rem;
+  border: solid 0.5px $color-gray-white;
+  margin-right: 1rem;
+  border-radius: 2.5px;
+}
+@mixin button-form {
+  background-color: $color-cyan;
+  height: 38px;
+  cursor: pointer;
+  border: unset;
+  border-radius: 3px;
+  color: $color-white;
+  margin: $one-rem auto;
+  font-weight: bold;
+  font-size: $font-18-px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: IRANSans;
+  position: absolute;
+  width: 7.5rem;
+  align-items: center;
+  top: calc(20px + -4.6rem);
+  left: calc(4rem + -28px);
+}
+@mixin button-title_form {
+  width: 7rem;
+  height: 36px;
+  font-size: 0.8rem;
+  background-color: $color-cyan;
+  cursor: pointer;
+  border: unset;
+  border-radius: 3px;
+  color: $color-white;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: IRANSans;
+  align-items: center;
+  top: calc(20px + -4.6rem);
+  left: calc(4rem + -28px);
+}
+@mixin button-form-disabled {
+  background-color: #969ba0;
+  position: absolute;
+  top: calc(20px + -4.6rem);
+  left: calc(4rem + -28px);
+  height: 38px;
+  cursor: pointer;
+  border: unset;
+  border-radius: 3px;
+  color: $color-white;
+  margin: $one-rem auto;
+  font-weight: bold;
+  font-size: $font-18-px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: IRANSans;
+  width: 7.5rem;
+  align-items: center;
+}
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex-center-justify-content {
+  display: flex;
+  justify-content: center;
+}
+@mixin flex-center-align-items {
+  display: flex;
+  align-items: center;
+}
+@mixin main-box-style {
+  margin-top: $main-header-height;
+  display: flex;
+  width: calc(100% - 15.375rem - 2.5rem);
+  height: calc(100vh - 9rem);
+  margin-left: $menu-default-margin;
+  margin-right: calc(13rem + 5.5rem);
+  direction: rtl;
+  overflow-y: scroll;
+}
+@mixin birthday-input {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAABgAAAAYADwa0LPAAABI0lEQVRo3u2YPU4CQRiGn4FtNfEA9nZ4BxNsTLgHEhsbbmBlLJRLSGICnQWHsKTW1hCg57OwYYkzYQLuy4bv6Tbzs++z87O7A45z3ITsFp0XK12Pevl97LG/xn89mapwATXp+XbzfEGz8QB2BZxUnG0JYYKFPuPuNF+gMzgH+wDOKg6+yQxCi9Ht51+FiSlkTwcQnt8M9hgrTK2Btjr5GtexgiLRqDznd93vcym/H05j1Wq/C7mAmmLrmpvfLAdC7UfABdRsvwa074EotR8BF1DjAmpcQI0LqHEBNS6gxgXUuIAaF1CT+idesn4+qj0XmscKEiMQJsLAZYz3fAELfWCmzg58U6zu8wXG3SmEFjAEFoLgC4xXmqtL3u6+BPd3nFrwA+EJNLxv3+IwAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIxLTA2LTA3VDE1OjEwOjU0KzAwOjAwhpBWhgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMS0wNi0wN1QxNToxMDo1NCswMDowMPfN7joAAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-size: 7%;
+  background-position: left;
+  background-position-x: 0.5rem;
+  cursor: pointer;
+}
+@mixin main-box-style-sidebar {
+  background-color: $color-white;
+  box-shadow: 0px 4px 6px rgba(62, 73, 84, 0.04);
+  border-radius: 30px;
+  margin-top: $main-header-height;
+  display: flex;
+  width: calc(100% - 2.375rem - 2.5rem);
+  margin-left: $menu-default-margin;
+  margin-right: calc(15.375rem + 4.5rem);
+  padding: $menu-item-padding;
+}
+
+@mixin input-disabled {
+  background-color: #f8f8f8;
+  border-radius: 2.5px;
+  opacity: 0.7;
+}
+@mixin grid_silver {
+  background-color: $color-light-green;
+  border-radius: 30px;
+  width: 90%;
+}
+@mixin payment__submit {
+  height: $main-header-btn-height;
+  width: $main-header-btn-width;
+  color: $color-white;
+  background-color: $color-cyan;
+  font-size: $font-20-px;
+  font-weight: bold;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+  font-family: IRANSans;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.disabled {
+    background-color: $color-silver;
+  }
+}
+@mixin payment__images {
+  display: flex;
+  width: $_100-percent;
+  justify-content: center;
+  margin-top: $tow-rem;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+@mixin tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  > * {
+    background-color: $color-white;
+    color: $color-black;
+    font-family: IRANSans;
+    font-size: $font-18-px;
+    width: 7rem;
+    height: $main-header-btn-height;
+    border: 1px solid $color-light-grayish-blue;
+    border-bottom: none;
+    margin-top: $one-rem;
+    cursor: pointer;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+}
+@mixin tabs_selected {
+  background-color: $color-cyan;
+  color: $color-white;
+  border: none;
+}
+@mixin filter-box {
+  padding: 1.5rem;
+  border-radius: $one-rem;
+  margin-bottom: 2rem;
+  background-color: $color-white;
+  box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.16);
+  border: solid 0.5px $color-white-light;
+}
+@mixin image-persian-calendar {
+  width: 1.3rem;
+  height: 1.3rem;
+  position: absolute;
+  left: 2rem;
+  top: 2.2rem;
+  bottom: 0;
+  cursor: pointer;
+}
+@mixin cancel-btn-style {
+  background-color: $color-white;
+  border: solid 0.5px #acacac;
+  font-family: Iransans;
+  width: 5rem;
+  height: 34px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@mixin accept-btn {
+  @include cancel-btn-style;
+  background-color: #3caea3;
+  color: $color-white;
+  margin-left: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+@mixin modal-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  width: fill-available;
+  justify-content: flex-end;
+  box-shadow: 0 -1.5px 12.5px 0 rgba(0, 0, 0, 0.13);
+  align-items: flex-end;
+  padding: 20px;
+}
+@mixin default-input {
+  height: 2.2rem;
+  border-radius: 0.2rem;
+  width: 12rem;
+  margin-right: 0;
+  padding-right: 0.8rem;
+  background-color: unset;
+  border: 1px solid #d1d1d1;
+  font-family: IRANSans;
+}
+
+@mixin grid-title {
+  font-size: 1.2rem;
+  color: #585858;
+  margin: 0;
+  width: 9rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-weight: bold;
+}
+@mixin otp {
+  .LoginLeft__form__otp {
+    direction: ltr;
+    //width: 20%;
+    input {
+      border: 0.1rem solid $color-gray-white;
+      border-radius: 0.4rem;
+      transition: all 0.5s;
+      margin-left: 0.5em;
+      font-size: 1rem;
+      font-family: IRANSans;
+      width: 2rem !important;
+      height: 2rem !important;
+    }
+    input:focus {
+      border: 0.1rem solid $color-navy-blue;
+      transition: all 0.5s;
+    }
+  }
+}

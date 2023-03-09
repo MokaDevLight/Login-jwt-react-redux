@@ -1,0 +1,90 @@
+@import "./utils/colors";
+@import "./utils/numbers";
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: IRANSans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $color-light-gray !important;
+}
+@font-face {
+  font-family: "FutuHv";
+  src: url("../assets/fonts/FutuHv/FutuHv.ttf");
+}
+@font-face {
+  font-family: "IRANSans";
+  src: url("../assets/fonts/IRANSansMobile.ttf");
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+input {
+  border: unset;
+  background-color: unset;
+  width: unset;
+  height: unset;
+}
+*:focus {
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+.router {
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+  height: 100vh;
+
+  > div:nth-child(2) {
+    transition: all 0.5s;
+  }
+  @media screen and (max-width: $Media-size-815px) {
+    display: block;
+    overflow: unset;
+    height: unset;
+    .main-header {
+      width: 100%;
+      margin: unset;
+      padding: 0 1rem;
+    }
+    .menu-container {
+      margin-top: 10rem;
+      position: unset;
+      .menu-list {
+        width: 90%;
+      }
+    }
+  }
+}
+@media screen and (min-width: $Media-size-815px) {
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(38, 50, 56, 0.2);
+    border-radius: 0.25rem;
+  }
+}
+.react-toast-notifications__container {
+  .css-h0gpo1-ToastElement {
+    .react-toast-notifications__toast {
+      .react-toast-notifications__toast__icon-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .react-toast-notifications__toast__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: end;
+      }
+    }
+  }
+}
